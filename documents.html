@@ -1,0 +1,63 @@
+<head>
+    <title>mObywatel</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/documents.css">
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/eagle_logo.svg">
+    <link rel="apple-touch-icon" href="assets/images/eagle_logo.svg">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="bottom_bar">
+        <div class="bottom_bar_grid">
+            <div class="bottom_element_grid" send="documents">
+                <div class="bottom_element_image documents documents_open"></div>
+                <p class="bottom_element_text open">Dokumenty</p>
+            </div>
+            <div class="bottom_element_grid" send="services">
+                <div class="bottom_element_image services"></div>
+                <p class="bottom_element_text">Usługi</p>
+            </div>
+            <div class="bottom_element_grid" send="qr">
+                <div class="bottom_element_image qr"></div>
+                <p class="bottom_element_text">Kod QR</p>
+            </div>
+            <div class="bottom_element_grid" send="more">
+                <div class="bottom_element_image more"></div>
+                <p class="bottom_element_text">Więcej</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="top_bar">
+            <div class="logo_holder">
+                <img class="app_logo" src="assets/images/eagle_logo.svg">
+            </div>
+            <div class="top_right">
+                <img class="notification_icon" src="assets/images/notifications.svg">
+                <img class="dots_icon" src="assets/images/help.svg">
+            </div>
+        </div>
+        <p class="main_title">Dokumenty</p>
+        <div class="actions_row">
+            <p class="action_link">Dostosuj</p>
+            <p class="action_link">Dodaj</p>
+        </div>
+        <div class="card" onclick="sendTo('card')">
+            <div class="card_content">
+                <p class="card_title">mDowód</p>
+            </div>
+            <img class="card_eagle" src="assets/images/eagle_logo.svg">
+        </div>
+        <div class="spacer"></div>
+    </div>
+
+    <script src="assets/bar.js"></script>
+    <script src="assets/manifest.js"></script>
+</body>

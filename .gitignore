@@ -1,0 +1,4 @@
+.claude/
+.netlify
+gen.html
+node_modules/

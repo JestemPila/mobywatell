@@ -1,0 +1,77 @@
+<head>
+    <title>mObywatel</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/qr.css">
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/eagle_logo.svg">
+    <link rel="apple-touch-icon" href="assets/images/eagle_logo.svg">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <div class="error">
+        <div class="opacity close"></div>
+        <div class="error_box">
+            <p class="error_title">Coś poszło nie tak...</p>
+            <p class="error_description">Wygląda na to, że dawid wali konia i nie dziala</p>
+            <p class="error_button close">Rozumiem</p>
+        </div>
+    </div>
+
+    <div class="bottom_bar">
+        <div class="bottom_bar_grid">
+            <div class="bottom_element_grid" send="documents">
+                <div class="bottom_element_image documents"></div>
+                <p class="bottom_element_text">Dokumenty</p>
+            </div>
+            <div class="bottom_element_grid" send="services">
+                <div class="bottom_element_image services"></div>
+                <p class="bottom_element_text">Usługi</p>
+            </div>
+            <div class="bottom_element_grid" send="qr">
+                <div class="bottom_element_image qr qr_open"></div>
+                <p class="bottom_element_text open">Kod QR</p>
+            </div>
+            <div class="bottom_element_grid" send="more">
+                <div class="bottom_element_image more"></div>
+                <p class="bottom_element_text">Więcej</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="back_header">
+        <img src="assets/images/chevron_left.svg" class="back_img back_button" style="filter: invert(1);">
+        <p class="back_text">Pokaż kod QR</p>
+    </div>
+
+    <div class="container">
+        <p class="qr_title">Pokaż kod QR</p>
+        <p class="qr_description">Poproś osobę, której sprawdzasz dokument, aby zeskanowała lub przepisała ten kod w swojej aplikacji mObywatel.</p>
+
+        <div class="qr_code_container">
+            <div class="qr_code" id="qr_code"></div>
+        </div>
+
+        <p class="qr_number" id="qr_number">59640</p>
+
+        <div class="qr_timer_container">
+            <div class="qr_timer_bar" id="qr_timer_bar"></div>
+            <p class="qr_timer_text" id="qr_timer_text">Kod wygaśnie za: 2 min 56 sek</p>
+        </div>
+
+        <div class="qr_footer">
+            <img src="assets/images/eagle_logo.svg" class="qr_footer_icon">
+            <img src="assets/images/eagle_logo.svg" class="qr_footer_icon" style="width: 40px;">
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="assets/bar.js"></script>
+    <script src="assets/qr.js"></script>
+    <script src="assets/manifest.js"></script>
+</body>

@@ -1,0 +1,290 @@
+<head>
+    <title>mObywatel</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/card.css?v=5.0">
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/eagle_logo.svg">
+    <link rel="apple-touch-icon" href="assets/images/eagle_logo.svg">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="top_grid">
+        <div class="action_grid">
+            <img src="assets/images/chevron_left.svg" class="back_img" style="filter: invert(1);">
+            <p onclick="sendTo('documents')" class="back_text">Wróć</p>
+        </div>
+        <p class="title_text">mDowód</p>
+        <img src="assets/images/help.svg" class="help_img" style="filter: invert(1);">
+    </div>
+
+    <div class="confirm">
+        <div class="opacity" onclick="closePage()"></div>
+        <div class="page_1 page">
+            <p class="confirm_title">Wybierz dokument</p>
+            <div class="confirm_list">
+                <div class="card card_1">
+                    <div class="card_inner">
+                        <p class="confirm_name">Dowód osobisty</p>
+                        <p class="confirm_description">Zobaczysz tutaj dane swojego dowodu osobistego. Ale jeśli chcesz potwierdzić tożsamość, potrzebujesz fizycznego dokumentu.</p>
+                        <p class="confirm_button" onclick="openPage(2)">Pokaż dane</p>
+                    </div>
+                </div>
+                <div class="card card_2">
+                    <div class="card_inner">
+                        <p class="confirm_name">mDowód</p>
+                        <p class="confirm_description">Nie używaj danych mDowodu w banku (do 31 sierpnia), gdy wyjeżdżasz za granicę lub składasz wniosek o dowód osobisty.</p>
+                        <p class="confirm_button" onclick="openPage(3)">Pokaż dane</p>
+                    </div>
+                </div>
+            </div>
+            <p class="confirm_close close_page_1" onclick="closePage()">Zamknij</p>
+        </div>
+        <div class="page page_2 page_other">
+            <p class="confirm_title">Dane dowodu osobistego</p>
+            <div class="confirm_info">
+                <div class="confirm_box">
+                    <p class="box_top">Seria i numer</p>
+                    <p class="box_value box_highlight">ZZC 108201</p>
+                    <button class="main_button">Kopiuj</button>
+                </div>
+                <div class="confirm_box">
+                    <p class="box_top">Organ wydający</p>
+                    <p class="box_value">URZĄD MIEJSKI W WARSZAWIE</p>
+                </div>
+                <div class="confirm_box">
+                    <p class="box_top">Termin ważności</p>
+                    <p class="box_value">11.09.2032</p>
+                </div>
+                <div class="confirm_box" style="border: none;">
+                    <p class="box_top">Termin wydania</p>
+                    <p class="box_value">11.09.2022</p>
+                </div>
+            </div>
+            <p class="confirm_close close_page_2" onclick="closePage()">Zamknij</p>
+            <p class="confirm_back back" onclick="openPage(1)">Wróć</p>
+        </div>
+        <div class="page page_3 page_other">
+            <p class="confirm_title">Dane mDowodu</p>
+            <div class="confirm_info">
+                <div class="confirm_box">
+                    <p class="box_top">Seria i numer</p>
+                    <p class="box_value box_highlight">ZZC 108201</p>
+                    <button class="main_button">Kopiuj</button>
+                </div>
+                <div class="confirm_box">
+                    <p class="box_top">Organ wydający</p>
+                    <p class="box_value">URZĄD MIEJSKI W WARSZAWIE</p>
+                </div>
+                <div class="confirm_box">
+                    <p class="box_top">Termin ważności</p>
+                    <p class="box_value">11.09.2032</p>
+                </div>
+                <div class="confirm_box">
+                    <p class="box_top">Imię ojca</p>
+                    <p class="box_value">ANDRZEJ</p>
+                </div>
+                <div class="confirm_box" style="border: none;">
+                    <p class="box_top">Imię matki</p>
+                    <p class="box_value">KATARZYNA</p>
+                </div>
+            </div>
+            <p class="confirm_close close_page_2" onclick="closePage()">Zamknij</p>
+            <p class="confirm_back back" onclick="openPage(1)">Wróć</p>
+        </div>
+    </div>
+
+    <div class="bottom_bar">
+        <div class="bottom_bar_grid">
+            <div class="bottom_element_grid" send="documents">
+                <div class="bottom_element_image documents_open"></div>
+                <p class="bottom_element_text open">Dokumenty</p>
+            </div>
+            <div class="bottom_element_grid" send="services">
+                <div class="bottom_element_image services"></div>
+                <p class="bottom_element_text">Usługi</p>
+            </div>
+            <div class="bottom_element_grid" send="qr">
+                <div class="bottom_element_image qr"></div>
+                <p class="bottom_element_text">Kod QR</p>
+            </div>
+            <div class="bottom_element_grid" send="more">
+                <div class="bottom_element_image more"></div>
+                <p class="bottom_element_text">Więcej</p>
+            </div>
+        </div>
+    </div>
+
+    <p class="time_text" id="time"></p>
+
+    <div class="id_card">
+        <div class="id_card_inner">
+            <div class="id_left">
+                <div class="id_photo_wrap">
+                    <div class="id_photo" id="id_photo"></div>
+                </div>
+                <div class="id_flag">
+                    <svg class="flag_svg" viewBox="0 0 120 30" preserveAspectRatio="none">
+                        <defs>
+                            <linearGradient id="flagShade" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="rgba(0,0,0,0.06)"/>
+                                <stop offset="25%" stop-color="rgba(255,255,255,0.12)"/>
+                                <stop offset="50%" stop-color="rgba(0,0,0,0.04)"/>
+                                <stop offset="75%" stop-color="rgba(255,255,255,0.1)"/>
+                                <stop offset="100%" stop-color="rgba(0,0,0,0.06)"/>
+                            </linearGradient>
+                        </defs>
+                        <path class="flag_white_wave" d="" fill="#ffffff"/>
+                        <path class="flag_red_wave" d="" fill="#dc143c"/>
+                        <rect x="0" y="0" width="120" height="30" fill="url(#flagShade)"/>
+                    </svg>
+                </div>
+                <div class="id_emblem">
+                    <img src="assets/images/eagle_logo.svg" class="emblem_img">
+                    <div class="emblem_label">
+                        <p class="emblem_text">Rzeczpospolita</p>
+                        <p class="emblem_text">Polska</p>
+                    </div>
+                </div>
+            </div>
+            <div class="id_right">
+                <div class="id_field">
+                    <p class="id_value" id="name"></p>
+                    <p class="id_label">Imię (imiona)</p>
+                </div>
+                <div class="id_field">
+                    <p class="id_value" id="surname"></p>
+                    <p class="id_label">Nazwisko</p>
+                </div>
+                <div class="id_field">
+                    <p class="id_value" id="nationality"></p>
+                    <p class="id_label">Obywatelstwo</p>
+                </div>
+                <div class="id_field">
+                    <p class="id_value" id="birthday"></p>
+                    <p class="id_label">Data urodzenia</p>
+                </div>
+                <div class="id_field">
+                    <p class="id_value" id="pesel"></p>
+                    <p class="id_label">Numer PESEL</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="valid_bar">
+        <img class="valid_icon" src="assets/images/check_mark.svg">
+        <p class="valid_text">Dokument ważny</p>
+    </div>
+
+    <div class="action_circles">
+        <div class="action_circle" onclick="sendTo('qr')">
+            <div class="circle_icon_wrap">
+                <img src="assets/images/lift_qr.svg" class="circle_icon" style="filter: invert(1);">
+            </div>
+            <p class="circle_label">Potwierdź</p>
+        </div>
+        <div class="action_circle" onclick="openPage(1)">
+            <div class="circle_icon_wrap">
+                <img src="assets/images/lift_documents.svg" class="circle_icon" style="filter: invert(1);">
+            </div>
+            <p class="circle_label">Dane</p>
+        </div>
+        <div class="action_circle">
+            <div class="circle_icon_wrap">
+                <img src="assets/images/zastrzez_pesel.svg" class="circle_icon" style="filter: brightness(0) invert(1);">
+            </div>
+            <p class="circle_label">Zastrzeż</p>
+        </div>
+        <div class="action_circle">
+            <div class="circle_icon_wrap">
+                <img src="assets/images/help.svg" class="circle_icon" style="filter: invert(1);">
+            </div>
+            <p class="circle_label">Pozostałe</p>
+        </div>
+    </div>
+
+    <div class="other_grid">
+        <div class="bottom_holder info_holder">
+            <div class="bottom_grid">
+                <p class="bottom_text" style="color: var(--text-primary); margin-left: 0px;">Twoje dodatkowe dane</p>
+            </div>
+            <img class="action_arrow" src="assets/images/chevron_right.svg" style="filter: invert(1);">
+            <div class="additional_holder">
+                <div class="additional_grid">
+                    <p class="additional_title">Nazwisko rodowe</p>
+                    <p class="additional_subtitle" id="familyName"></p>
+                </div>
+                <div class="additional_grid">
+                    <p class="additional_title">Płeć</p>
+                    <p class="additional_subtitle" id="sex"></p>
+                </div>
+                <div class="additional_grid">
+                    <p class="additional_title">Nazwisko rodowe ojca</p>
+                    <p class="additional_subtitle" id="fathersFamilyName"></p>
+                </div>
+                <div class="additional_grid">
+                    <p class="additional_title">Nazwisko rodowe matki</p>
+                    <p class="additional_subtitle" id="mothersFamilyName"></p>
+                </div>
+                <div class="additional_grid">
+                    <p class="additional_title">Miejsce urodzenia</p>
+                    <p class="additional_subtitle" id="birthPlace"></p>
+                </div>
+                <div class="additional_grid">
+                    <p class="additional_title">Kraj urodzenia</p>
+                    <p class="additional_subtitle" id="countryOfBirth"></p>
+                </div>
+                <div class="additional_grid">
+                    <p class="additional_title">Adres zameldowania na pobyt stały</p>
+                    <p class="additional_subtitle" id="adress"></p>
+                </div>
+                <div class="additional_grid" style="border-bottom: none;">
+                    <p class="additional_title">Data zameldowania na pobyt stały</p>
+                    <p class="additional_subtitle home_date"></p>
+                </div>
+            </div>
+        </div>
+        <div class="bottom_holder" style="height: 90px; margin-bottom: 120px;">
+            <div class="bottom_update">
+                <div class="bottom_update_grid">
+                    <p class="bottom_update_text" style="margin-left: 0px;">Ostatnia aktualizacja</p>
+                    <p class="bottom_update_value" style="margin-left: 0px;"></p>
+                </div>
+                <button class="main_button update">Aktualizuj</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        var wh = document.querySelector('.flag_white_wave');
+        var rd = document.querySelector('.flag_red_wave');
+        if(!wh||!rd) return;
+        var t = 0;
+        function wave(){
+            t += 0.035;
+            var w = 'M0,0 ';
+            var r = 'M0,30 ';
+            for(var x=0;x<=120;x+=1.5){
+                var y = 14 + Math.sin((x/20)+t)*2.5 + Math.sin((x/8)+t*1.6)*1.2 + Math.sin((x/35)+t*0.7)*1;
+                w += 'L'+x+','+y.toFixed(1)+' ';
+                r += 'L'+x+','+y.toFixed(1)+' ';
+            }
+            w += 'L120,0 Z';
+            r += 'L120,30 Z';
+            wh.setAttribute('d', w);
+            rd.setAttribute('d', r);
+            requestAnimationFrame(wave);
+        }
+        wave();
+    })();
+    </script>
+    <script src="assets/bar.js"></script>
+    <script src="assets/card.js?v=5.0"></script>
+    <script src="assets/manifest.js"></script>
+</body>
